@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thilina/development/Robot_ws/src
+CMAKE_SOURCE_DIR = /home/thilina/development/robot_ws/Robot_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thilina/development/Robot_ws/build
+CMAKE_BINARY_DIR = /home/thilina/development/robot_ws/Robot_ws/build
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/build: std_ms
 .PHONY : low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/build
 
 low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	cd /home/thilina/development/Robot_ws/build/low_level_controllers && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /home/thilina/development/Robot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thilina/development/Robot_ws/src /home/thilina/development/Robot_ws/src/low_level_controllers /home/thilina/development/Robot_ws/build /home/thilina/development/Robot_ws/build/low_level_controllers /home/thilina/development/Robot_ws/build/low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/thilina/development/robot_ws/Robot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thilina/development/robot_ws/Robot_ws/src /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers /home/thilina/development/robot_ws/Robot_ws/build /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : low_level_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/depend
 
