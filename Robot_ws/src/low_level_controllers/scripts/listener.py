@@ -40,7 +40,7 @@ import rospy
 from std_msgs.msg import String
 from low_level_controllers.msg import *
 def callback(data):
-    print(data.cmd)
+    print(data)
     # rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
 
 def listener():
@@ -52,7 +52,7 @@ def listener():
     # run simultaneously.
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber('chatter1', Motor, callback)
+    rospy.Subscriber('chatter1', String, callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

@@ -1,2 +1,2 @@
-low_level_controllers
+custom_messages_module:js_module:low_level_controllers:more_custom_msgs
 -DCATKIN_DEVEL_PREFIX=/home/thilina/development/robot_ws/Robot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/thilina/development/robot_ws/Robot_ws/install -G Unix Makefiles

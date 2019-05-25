@@ -117,6 +117,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/thilina/development/robot_ws/Robot_ws/build/gtest/cmake_install.cmake")
+  include("/home/thilina/development/robot_ws/Robot_ws/build/custom_messages_module/cmake_install.cmake")
+  include("/home/thilina/development/robot_ws/Robot_ws/build/more_custom_msgs/cmake_install.cmake")
+  include("/home/thilina/development/robot_ws/Robot_ws/build/js_module/cmake_install.cmake")
   include("/home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers/cmake_install.cmake")
 
 endif()

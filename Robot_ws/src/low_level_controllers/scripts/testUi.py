@@ -26,7 +26,7 @@ except AttributeError:
 
 class commandController:
     def __init__(self):
-        self.pub = rospy.Publisher('UI/comm', Motor, queue_size=10)
+        self.pub = rospy.Publisher('/abc', Motor, queue_size=10)
     def sendMsg(self,status,msg,ang):
         x = {"status": status,"speed": msg,"angle":ang}
         print(json.dumps(x))
