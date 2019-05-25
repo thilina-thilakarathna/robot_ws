@@ -1,0 +1,8 @@
+prefix=/home/thilina/development/robot_ws/Robot_ws/install
+
+Name: js_module
+Description: Description of js_module
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/thilina/development/robot_ws/Robot_ws/install/lib 
+Requires: std_msgs custom_messages_module more_custom_msgs

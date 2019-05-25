@@ -1,0 +1,24 @@
+{
+  "name": "js_module",
+  "version": "0.0.1",
+  "description": "Example programs for ROS Node Javascript issue",
+  "keywords": [
+    "ros"
+  ],
+  "scripts": {
+    "ros_node_script": "node scripts/ros_node_script.js",
+    "talker": "node scripts/talker.js",
+    "listener": "node scripts/listener.js"
+  },
+  "author": "Renato Samperio",
+  "license": "TODO",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renatosamperio/sample_js_ws.git"
+  },
+  "dependencies": {
+    "express": "^4.17.0",
+    "rosnodejs": "2.2.0",
+    "socket.io": "^2.2.0"
+  }
+}
