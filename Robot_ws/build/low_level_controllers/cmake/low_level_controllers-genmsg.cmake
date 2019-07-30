@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "low_level_controllers: 1 messages, 2 services")
+message(STATUS "low_level_controllers: 2 messages, 2 services")
 
 set(MSG_I_FLAGS "-Ilow_level_controllers:/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -17,14 +17,19 @@ add_custom_target(low_level_controllers_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" NAME_WE)
 add_custom_target(_low_level_controllers_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "low_level_controllers" "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "low_level_controllers" "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" ""
 )
 
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" NAME_WE)
 add_custom_target(_low_level_controllers_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "low_level_controllers" "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" ""
+)
+
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+add_custom_target(_low_level_controllers_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "low_level_controllers" "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" ""
 )
 
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg" NAME_WE)
@@ -38,6 +43,12 @@ add_custom_target(_low_level_controllers_generate_messages_check_deps_${_filenam
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(low_level_controllers
+  "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/low_level_controllers
+)
 _generate_msg_cpp(low_level_controllers
   "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
   "${MSG_I_FLAGS}"
@@ -71,9 +82,11 @@ add_custom_target(low_level_controllers_generate_messages_cpp
 add_dependencies(low_level_controllers_generate_messages low_level_controllers_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_cpp _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" NAME_WE)
+add_dependencies(low_level_controllers_generate_messages_cpp _low_level_controllers_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_cpp _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_cpp _low_level_controllers_generate_messages_check_deps_${_filename})
@@ -87,6 +100,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS low_level_controllers_generate_mess
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(low_level_controllers
+  "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/low_level_controllers
+)
 _generate_msg_eus(low_level_controllers
   "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
   "${MSG_I_FLAGS}"
@@ -120,9 +139,11 @@ add_custom_target(low_level_controllers_generate_messages_eus
 add_dependencies(low_level_controllers_generate_messages low_level_controllers_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_eus _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" NAME_WE)
+add_dependencies(low_level_controllers_generate_messages_eus _low_level_controllers_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_eus _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_eus _low_level_controllers_generate_messages_check_deps_${_filename})
@@ -136,6 +157,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS low_level_controllers_generate_mess
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(low_level_controllers
+  "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/low_level_controllers
+)
 _generate_msg_lisp(low_level_controllers
   "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
   "${MSG_I_FLAGS}"
@@ -169,9 +196,11 @@ add_custom_target(low_level_controllers_generate_messages_lisp
 add_dependencies(low_level_controllers_generate_messages low_level_controllers_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_lisp _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" NAME_WE)
+add_dependencies(low_level_controllers_generate_messages_lisp _low_level_controllers_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_lisp _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_lisp _low_level_controllers_generate_messages_check_deps_${_filename})
@@ -185,6 +214,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS low_level_controllers_generate_mess
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(low_level_controllers
+  "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/low_level_controllers
+)
 _generate_msg_nodejs(low_level_controllers
   "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
   "${MSG_I_FLAGS}"
@@ -218,9 +253,11 @@ add_custom_target(low_level_controllers_generate_messages_nodejs
 add_dependencies(low_level_controllers_generate_messages low_level_controllers_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_nodejs _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" NAME_WE)
+add_dependencies(low_level_controllers_generate_messages_nodejs _low_level_controllers_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_nodejs _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_nodejs _low_level_controllers_generate_messages_check_deps_${_filename})
@@ -234,6 +271,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS low_level_controllers_generate_mess
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(low_level_controllers
+  "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/low_level_controllers
+)
 _generate_msg_py(low_level_controllers
   "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
   "${MSG_I_FLAGS}"
@@ -267,9 +310,11 @@ add_custom_target(low_level_controllers_generate_messages_py
 add_dependencies(low_level_controllers_generate_messages low_level_controllers_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_py _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv" NAME_WE)
+add_dependencies(low_level_controllers_generate_messages_py _low_level_controllers_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_py _low_level_controllers_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg" NAME_WE)
 add_dependencies(low_level_controllers_generate_messages_py _low_level_controllers_generate_messages_check_deps_${_filename})

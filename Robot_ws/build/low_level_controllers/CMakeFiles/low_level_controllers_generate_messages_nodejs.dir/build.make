@@ -53,27 +53,34 @@ CMAKE_BINARY_DIR = /home/thilina/development/robot_ws/Robot_ws/build
 # Include the progress variables for this target.
 include low_level_controllers/CMakeFiles/low_level_controllers_generate_messages_nodejs.dir/progress.make
 
+low_level_controllers/CMakeFiles/low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/CmdBundle.js
 low_level_controllers/CMakeFiles/low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/Motor.js
 low_level_controllers/CMakeFiles/low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/AddTwoInts.js
 low_level_controllers/CMakeFiles/low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/UIcommand.js
 
 
+/home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/CmdBundle.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/CmdBundle.js: /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from low_level_controllers/CmdBundle.msg"
+	cd /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg -Ilow_level_controllers:/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p low_level_controllers -o /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg
+
 /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/Motor.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/Motor.js: /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from low_level_controllers/Motor.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from low_level_controllers/Motor.msg"
 	cd /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg -Ilow_level_controllers:/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p low_level_controllers -o /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg
 
 /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/AddTwoInts.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/AddTwoInts.js: /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from low_level_controllers/AddTwoInts.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from low_level_controllers/AddTwoInts.srv"
 	cd /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv -Ilow_level_controllers:/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p low_level_controllers -o /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv
 
 /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/UIcommand.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/UIcommand.js: /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from low_level_controllers/UIcommand.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/thilina/development/robot_ws/Robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from low_level_controllers/UIcommand.srv"
 	cd /home/thilina/development/robot_ws/Robot_ws/build/low_level_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv -Ilow_level_controllers:/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p low_level_controllers -o /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv
 
 low_level_controllers_generate_messages_nodejs: low_level_controllers/CMakeFiles/low_level_controllers_generate_messages_nodejs
+low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/CmdBundle.js
 low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/msg/Motor.js
 low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/AddTwoInts.js
 low_level_controllers_generate_messages_nodejs: /home/thilina/development/robot_ws/Robot_ws/devel/share/gennodejs/ros/low_level_controllers/srv/UIcommand.js

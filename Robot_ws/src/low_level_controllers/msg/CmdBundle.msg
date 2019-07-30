@@ -1,0 +1,12 @@
+float32 servo1_ang
+float32 servo2_ang
+float32 servo3_ang
+float32 servo4_ang
+float32 servo5_ang
+float32 servo6_ang
+float32 wheel1_ang
+float32 wheel1_vel
+float32 wheel2_ang
+float32 wheel2_vel
+float32 wheel3_ang
+float32 wheel3_vel

@@ -30,6 +30,8 @@ const socketIo = require('socket.io');
 const path = require('path');
 const app = express();
 app.use(express.static(path.join(__dirname,'dist/ngsocket')));
+//app.use(express.static(path.join(__dirname,'dist/UI')));
+
   
 var publish;
 
@@ -41,12 +43,6 @@ const server = http.Server(app);
   server.listen(4000);
 
    const io = socketIo(server);
-  // io.on('connection',(socket)=>{
-  //   socket.emit('hello',{
-  //     greeting: 'Hello thilina'
-  //   });
-  // });
-  // io.on('message',(data)=>console.log(data));
 
   io.on('connection', function(socket) {
       socket.emit('hello',{

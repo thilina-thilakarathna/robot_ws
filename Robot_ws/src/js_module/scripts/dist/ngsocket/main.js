@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <button (click)=\"forward()\">Forward</button><br><br><br>\n  <button (click)=\"backward()\">Backward</button><br><br><br>\n  <button (click)=\"stop()\">Stop</button><br><br><br>\n\n  <div *ngIf=\"motor\">\n\n    <div>\n      <label>Velosity Input: \n        <input [(ngModel)]=\"motor.velocity\" placeholder=\"velocity\"/>\n      </label>\n    </div>\n    <br><br><br>\n    <div>\n      <label>Angle Input: \n        <input [(ngModel)]=\"motor.angle\" placeholder=\"velocity\"/>\n      </label>\n    </div>\n    </div>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n \n\n<section class=\"py-3\">\n  <div class=\"container\">\n    <div class=\"row grid-divider\">\n      <div class=\"col-12 col-sm-4 col-md-4 col-lg-4 my-1\">\n        <div class=\"card\">\n          <button  [disabled]=\"config\" (click)=\"configure()\">Configurations</button>\n        </div>\n      </div>\n      <div class=\"col-12 col-sm-4 col-md-4 col-lg-4 my-1\">\n        <div class=\"card\">\n          <button [disabled]=\"command\" (click)=\"rawCommand()\">Raw Commander</button>\n        </div>\n      </div>\n\n            <div class=\"col-12 col-sm-4 col-md-4 col-lg-4 my-1\">\n        <div class=\"card\">\n          <button [disabled]=\"manual\"  (click)=\"manualControl()\"> Manual Controller</button>\n        </div>\n      </div>\n         \n    </div>\n  </div>\n</section>\n\n\n <div *ngIf=\"config\" class=\"jumbotron\">\n<div >\n  <label>name:\n    <input [(ngModel)]=\"Ip.ip\" placeholder=\"Ip address\"/>\n  </label>\n</div>\n\n\n<button [disabled]=\"socket_conn\" (click)=\"setSocketIo()\">Set Socket IP</button>\n</div>\n \n<br>\n\n<div *ngIf=\"command\" class=\"jumbotron\">\n  <button (click)=\"forward()\">Forward</button><br><br><br>\n  <button (click)=\"backward()\">Backward</button><br><br><br>\n  <button (click)=\"stop()\">Stop</button><br><br><br>\n\n  <div *ngIf=\"motor\">\n\n    <div>\n      <label>Velosity Input: \n        <input [(ngModel)]=\"motor.velocity\" placeholder=\"velocity\"/>\n      </label>\n    </div>\n    <br><br><br>\n    <div>\n      <label>Angle Input: \n        <input [(ngModel)]=\"motor.angle\" placeholder=\"velocity\"/>\n      </label>\n    </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"manual\" class=\"jumbotron\">\n   <h1>manual control</h1>\n   <h2>set conditions</h2>\n\n   <div *ngIf=\"motor\">\n\n    <div>\n      <label>Velosity Input: \n        <input [(ngModel)]=\"motor.velocity\" placeholder=\"velocity\"/>\n      </label>\n    </div>\n    <br><br><br>\n    <div>\n      <label>Angle Input: \n        <input [(ngModel)]=\"motor.angle\" placeholder=\"velocity\"/>\n      </label>\n    </div>\n    </div>\n    <h2>Controls</h2>\n   <section class=\"py-3\">\n    <div class=\"container\">\n        \n\n     \n        <div class=\"row grid-divider\">\n            <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n              <div >\n                \n              </div>\n            </div>\n            <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n              <div class=\"card\">\n                <button (click)=\"forward()\">Farward</button>\n              </div>\n            </div>\n      \n                  <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n              <div >\n              \n              </div>\n            </div>\n               \n          </div>\n\n\n      <div class=\"row grid-divider\">\n        <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n          <div class=\"card\">\n            <button  (click)=\"left()\">Left</button>\n          </div>\n        </div>\n        <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n          <div class=\"card\">\n            <button  (click)=\"stop()\">Stop</button>\n          </div>\n        </div>\n  \n              <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n          <div class=\"card\">\n            <button  (click)=\"right()\">Right</button>\n          </div>\n        </div>\n           \n      </div>\n\n      <div class=\"row grid-divider\">\n          <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n            <div >\n              \n            </div>\n          </div>\n          <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n            <div class=\"card\">\n              <button (click)=\"backward()\">Backward</button>\n            </div>\n          </div>\n    \n                <div class=\"col-4 col-sm-4 col-md-4 col-lg-4 my-1\">\n            <div>\n            \n            </div>\n          </div>\n             \n        </div>\n    </div>\n  </section>\n    </div>"
 
 /***/ }),
 
@@ -64,13 +64,64 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        this.config = true;
+        this.manual = false;
+        this.command = false;
+        this.socket_conn = false;
         this.motor = {
             cmd: 'stop',
             velocity: 100,
             angle: 90
         };
+        this.Ip = {
+            ip: 'localhost'
+        };
         this.title = 'Robot Dashboard';
     }
+    AppComponent.prototype.setSocketIo = function () {
+        var _this = this;
+        var socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__("http://" + this.Ip.ip + ":4000");
+        this.socket = socket;
+        socket.on('hello', function (data) {
+            console.log(data);
+            _this.socket_conn = true;
+            _this.alert("Socket Connection Successful");
+        });
+        socket.on('disconnect', function () {
+            this.socket_conn = false;
+        });
+        socket.emit('connect status', {
+            greeting: 'working !!!'
+        });
+    };
+    ;
+    AppComponent.prototype.configure = function () {
+        this.config = true;
+        this.manual = false;
+        this.command = false;
+    };
+    ;
+    AppComponent.prototype.rawCommand = function () {
+        if (this.socket_conn) {
+            this.config = false;
+            this.manual = false;
+            this.command = true;
+        }
+        else {
+            this.alert('Please setup the socket connection !');
+        }
+    };
+    ;
+    AppComponent.prototype.manualControl = function () {
+        if (this.socket_conn) {
+            this.config = false;
+            this.manual = true;
+            this.command = false;
+        }
+        else {
+            this.alert('Please setup the socket connection !');
+        }
+    };
     AppComponent.prototype.forward = function () {
         this.motor.cmd = 'farward';
         this.socket.emit('message', {
@@ -98,15 +149,32 @@ var AppComponent = /** @class */ (function () {
         });
     };
     ;
-    AppComponent.prototype.ngOnInit = function () {
-        var socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__('http://192.168.43.72:4000');
-        this.socket = socket;
-        socket.on('hello', function (data) { return console.log(data); });
-        socket.emit('connect status', {
-            greeting: 'working !!!'
+    AppComponent.prototype.left = function () {
+        var ang = this.motor.angle;
+        this.motor.angle = (ang - 5);
+        this.socket.emit('message', {
+            cmd: this.motor.cmd,
+            velocity: this.motor.velocity,
+            angle: this.motor.angle
         });
     };
     ;
+    AppComponent.prototype.right = function () {
+        var ang = this.motor.angle;
+        this.motor.angle = (ang - (-5));
+        this.socket.emit('message', {
+            cmd: this.motor.cmd,
+            velocity: this.motor.velocity,
+            angle: this.motor.angle
+        });
+    };
+    ;
+    AppComponent.prototype.ngOnInit = function () {
+    };
+    ;
+    AppComponent.prototype.alert = function (msg) {
+        window.alert(msg);
+    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
@@ -141,6 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -151,7 +220,8 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -225,7 +295,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/thilina/development/angular-dev/angular/ngsocket/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/thilina/development/robot_ws/angular/ngsocket/src/main.ts */"./src/main.ts");
 
 
 /***/ }),
