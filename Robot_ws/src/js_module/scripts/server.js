@@ -29,7 +29,7 @@ const http = require('http');
 const socketIo = require('socket.io');
 const path = require('path');
 const app = express();
-app.use(express.static(path.join(__dirname,'dist/ngsocket')));
+app.use(express.static(path.join(__dirname,'dist/testui')));
 //app.use(express.static(path.join(__dirname,'dist/UI')));
 
   

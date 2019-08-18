@@ -1,0 +1,151 @@
+// .content{
+// background-color: black;
+// position: absolute; 
+// top:0;
+// bottom: 0;
+// left: 0; 
+// right: 0; 
+
+// }
+// .home-h1{
+//     color: rgb(190, 207, 223);
+// }
+.navbar{
+    background-color: rgb(189, 182, 182);
+}
+// .align-c{
+//     align-content: flex-end;
+// }
+.navbar-nav li{
+    padding-left: 20px;
+  }
+  .btn {
+      color: black;
+    /* default for <button>, but useful for <a> */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  
+    /* create a small space when buttons wrap on 2 lines */
+    margin: 2px 0;
+  
+    /* invisible border (will be colored on hover/focus) */
+    border: solid 1px transparent;
+    border-radius: 4px;
+  
+    /* size comes from text & padding (no width/height) */
+    padding: 0.5em 1em;
+  
+    /* make sure colors have enough contrast! */
+    
+    background-color: transparent;
+  };
+  .btn:hover{
+    color: black;
+    background-color: white;
+  };
+//   .btn:focus{
+//     color:white;
+//     background-color: black;
+//   };
+  
+
+
+  .content{
+    //background-color: black;
+    //background-color: rgb(107, 105, 110);
+    
+    //background-size: cover;
+   
+  
+    background-color: rgb(94, 103, 105);
+    background-size: cover;
+    
+   // position: absolute;
+    // position: relative; 
+    // height: 100%;
+    // width: 100%;
+    //  top:0;
+    // bottom: 0;
+    //  left: 0; 
+    //  right: 0; 
+    //  border-width: 0px;
+      background-image: url("../../../assets/back.png");
+  position: relative;
+  background-color: #cccccc; /* Used if the image is unavailable */
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+ position: relative; 
+  position: absolute;
+     top:0;
+    bottom: 0;
+     left: 0; 
+     right: 0;
+  
+    };
+
+    
+
+    .container {
+        color:white;
+    }
+    .btn-select{
+        color:black;
+    }
+
+    .btn-pri
+ {
+    background-color: rgb(107, 105, 110);
+    border-color:rgb(107, 105, 110);
+}
+// .file{
+//   background-image: url("../../../assets/dis.png");
+//   position: relative;
+//   background-color: #cccccc; /* Used if the image is unavailable */
+
+//   background-position: center; /* Center the image */
+//   background-repeat: no-repeat; /* Do not repeat the image */
+//   background-size: cover;
+//   height: 40rem;
+//   width :40rem;
+// }
+// @media screen and (max-width: 992px) {
+//   .center{
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 50%;
+    
+//   }
+// }
+
+// /* On screens that are 600px wide or less, the background color is olive */
+// @media screen and (max-width: 600px) {
+//   .center{
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 50%;
+//   }
+//   .content{
+//     //background-color: black;
+//     //background-color: rgb(107, 105, 110);
+//     // background-image: url("../../../assets/dis.png");
+//     // background-position: center; /* Center the image */
+//     // background-repeat: no-repeat; /* Do not repeat the image */
+//     // //background-size: cover;
+   
+  
+//     background-color: rgb(94, 103, 105);
+    
+    
+//     };
+// }
+// .center{
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: 50%;
+// }
