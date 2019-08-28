@@ -26,7 +26,7 @@ except AttributeError:
 
 class commandController:
     def __init__(self):
-        self.pub = rospy.Publisher('UI/comm', Motor, queue_size=10)
+        self.pub = rospy.Publisher('/abc', Motor, queue_size=10)
     def sendMsg(self,status,msg,ang):
         x = {"status": status,"speed": msg,"angle":ang}
         print(json.dumps(x))
@@ -87,7 +87,7 @@ class Ui_Form(object):
         QtCore.QObject.connect(self.pushButton_2, QtCore.SIGNAL(_fromUtf8("clicked()")), self.backwardcmd)
         QtCore.QObject.connect(self.pushButton_3, QtCore.SIGNAL(_fromUtf8("clicked()")), self.stopcmd)
         QtCore.QObject.connect(self.verticalSlider, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.speedcmd)
-	QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.anglecmd)
+	    QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.anglecmd)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):

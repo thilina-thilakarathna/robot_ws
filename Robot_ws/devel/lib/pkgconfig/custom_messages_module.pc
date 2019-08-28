@@ -1,0 +1,8 @@
+prefix=/home/thilina/development/robot_ws/Robot_ws/devel
+
+Name: custom_messages_module
+Description: Description of custom_messages_module
+Version: 0.0.0
+Cflags: -I/home/thilina/development/robot_ws/Robot_ws/devel/include
+Libs: -L/home/thilina/development/robot_ws/Robot_ws/devel/lib 
+Requires: message_runtime std_msgs

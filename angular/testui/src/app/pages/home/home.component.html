@@ -1,0 +1,188 @@
+ <div class="content">
+<div class="cover">
+ 
+    <nav class="navbar navbar-expand-sm navbar-light" >
+        <a target="_blank" rel="noopener noreferrer" class="navbar-brand" href="http://thilinathilakarathna.alwaysdata.net/">
+          <!-- <img src="/src/assets/mobile.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          Robot -->
+          <img src="../../../assets/mobile.svg" width="30" height="30" alt="">
+           &nbsp; RobotStudio
+        </a>
+       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <button *ngIf="file" type="button" class="btn btn-pri" (click)="redirectFile()">File</button>
+              <button *ngIf="!file" type="button" class="btn" (click)="redirectFile()">File</button>
+            </li>
+            <li class="nav-item">
+              <button *ngIf="control" type="button" class="btn btn-pri" (click)="redirectControl()">Control</button>
+              <button *ngIf="!control" type="button" class="btn" (click)="redirectControl()">Control</button>
+            </li>
+            <li class="nav-item">
+              <button *ngIf="tool" type="button" class="btn btn-pri" (click)="redirectTool()">Tool</button>
+              <button *ngIf="!tool" type="button" class="btn" (click)="redirectTool()">Tool</button>
+            </li>
+            <li class="nav-item">
+              <button *ngIf="help" type="button" class="btn btn-pri" (click)="redirectHelp()">Help</button>
+              <button *ngIf="!help" type="button" class="btn" (click)="redirectHelp()">Help</button>
+            </li>
+          </ul>
+      
+        </div>
+     
+      </nav>
+      <section class="py-3">
+        <div class="container">
+          <div class="row grid-divider">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 my-1">
+              Robot : {{robotStstus}}
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 my-1">
+              IP : {{ip}}
+            </div>
+      
+               
+          </div>
+        </div>
+      </section>
+      <div class="body">
+<div *ngIf="file" class="file">
+  <button type="button" class="btn1 btn-dark" (click)="addRobot()">Add Robot</button><br>
+<br>
+<div *ngIf="robotAdded">
+    <h4>
+    <label>IP address :
+      <input [(ngModel)]="ip" placeholder="Ip address"/>
+    </label><br>
+    <label>Port :
+        <input [(ngModel)]="port" placeholder="Ip address"/>
+      </label>
+  </h4>
+    <button (click)="setSocketIo()">Connect Robot</button>
+  </div>
+ 
+  
+</div>
+      <div *ngIf="control">
+        <div *ngIf="!connStatus">
+          <h3>Please Connect a Robot ! </h3>
+        </div>
+        <div *ngIf="connStatus">
+          <!--  -->
+
+          <div class="j">
+              <h1>manual control</h1>
+              <h2>set conditions</h2>
+           
+              <div *ngIf="motor">
+           
+               <div>
+                 <label>Velosity Input: 
+                   <input [(ngModel)]="motor.velocity" placeholder="velocity"/>
+                 </label>
+               </div>
+               <br><br><br>
+               <div>
+                 <label>Angle Input: 
+                   <input [(ngModel)]="motor.angle" placeholder="velocity"/>
+                 </label>
+               </div>
+               </div>
+               <h2>Controls</h2>
+              <section class="py-3">
+               <div class="container">
+                   
+           
+                
+                   <div class="row grid-divider">
+                       <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                         <div >
+                           
+                         </div>
+                       </div>
+                       <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                         <div class="card">
+                           <button (click)="forward()">Farward</button>
+                         </div>
+                       </div>
+                 
+                             <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                         <div >
+                         
+                         </div>
+                       </div>
+                          
+                     </div>
+           
+           
+                 <div class="row grid-divider">
+                   <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                     <div class="card">
+                       <button  (click)="left()">Left</button>
+                     </div>
+                   </div>
+                   <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                     <div class="card">
+                       <button  (click)="stop()">Stop</button>
+                     </div>
+                   </div>
+             
+                         <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                     <div class="card">
+                       <button  (click)="right()">Right</button>
+                     </div>
+                   </div>
+                      
+                 </div>
+           
+                 <div class="row grid-divider">
+                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                       <div >
+                         
+                       </div>
+                     </div>
+                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                       <div class="card">
+                         <button (click)="backward()">Backward</button>
+                       </div>
+                     </div>
+               
+                           <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+                       <div>
+                       
+                       </div>
+                     </div>
+                        
+                   </div>
+               </div>
+             </section>
+               </div>
+          <!--  -->
+          </div>
+
+      </div>
+
+      <div *ngIf="tool">
+          <div *ngIf="!connStatus">
+            <h3>Please Connect a Robot ! </h3>
+          </div>
+          <div *ngIf="connStatus">
+  
+            </div>
+  
+        </div>
+
+        <div *ngIf="help">
+            Problems
+    
+          </div>
+      
+    </div>
+  </div>
+</div> 
+

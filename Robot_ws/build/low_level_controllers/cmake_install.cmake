@@ -33,7 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/low_level_controllers/msg" TYPE FILE FILES "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/low_level_controllers/msg" TYPE FILE FILES
+    "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
+    "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

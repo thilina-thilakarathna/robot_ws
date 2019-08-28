@@ -1,0 +1,153 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ 
+
+<section class="py-3">
+  <div class="container">
+    <div class="row grid-divider">
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 my-1">
+        <div class="card">
+          <button  [disabled]="config" (click)="configure()">Configurations</button>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 my-1">
+        <div class="card">
+          <button [disabled]="command" (click)="rawCommand()">Raw Commander</button>
+        </div>
+      </div>
+
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 my-1">
+        <div class="card">
+          <button [disabled]="manual"  (click)="manualControl()"> Manual Controller</button>
+        </div>
+      </div>
+         
+    </div>
+  </div>
+</section>
+
+
+ <div *ngIf="config" class="jumbotron">
+<div >
+  <label>name:
+    <input [(ngModel)]="Ip.ip" placeholder="Ip address"/>
+  </label>
+</div>
+
+
+<button [disabled]="socket_conn" (click)="setSocketIo()">Set Socket IP</button>
+</div>
+ 
+<br>
+
+<div *ngIf="command" class="jumbotron">
+  <button (click)="forward()">Forward</button><br><br><br>
+  <button (click)="backward()">Backward</button><br><br><br>
+  <button (click)="stop()">Stop</button><br><br><br>
+
+  <div *ngIf="motor">
+
+    <div>
+      <label>Velosity Input: 
+        <input [(ngModel)]="motor.velocity" placeholder="velocity"/>
+      </label>
+    </div>
+    <br><br><br>
+    <div>
+      <label>Angle Input: 
+        <input [(ngModel)]="motor.angle" placeholder="velocity"/>
+      </label>
+    </div>
+    </div>
+  </div>
+
+  <div *ngIf="manual" class="jumbotron">
+   <h1>manual control</h1>
+   <h2>set conditions</h2>
+
+   <div *ngIf="motor">
+
+    <div>
+      <label>Velosity Input: 
+        <input [(ngModel)]="motor.velocity" placeholder="velocity"/>
+      </label>
+    </div>
+    <br><br><br>
+    <div>
+      <label>Angle Input: 
+        <input [(ngModel)]="motor.angle" placeholder="velocity"/>
+      </label>
+    </div>
+    </div>
+    <h2>Controls</h2>
+   <section class="py-3">
+    <div class="container">
+        
+
+     
+        <div class="row grid-divider">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+              <div >
+                
+              </div>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+              <div class="card">
+                <button (click)="forward()">Farward</button>
+              </div>
+            </div>
+      
+                  <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+              <div >
+              
+              </div>
+            </div>
+               
+          </div>
+
+
+      <div class="row grid-divider">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+          <div class="card">
+            <button  (click)="left()">Left</button>
+          </div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+          <div class="card">
+            <button  (click)="stop()">Stop</button>
+          </div>
+        </div>
+  
+              <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+          <div class="card">
+            <button  (click)="right()">Right</button>
+          </div>
+        </div>
+           
+      </div>
+
+      <div class="row grid-divider">
+          <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+            <div >
+              
+            </div>
+          </div>
+          <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+            <div class="card">
+              <button (click)="backward()">Backward</button>
+            </div>
+          </div>
+    
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-1">
+            <div>
+            
+            </div>
+          </div>
+             
+        </div>
+    </div>
+  </section>
+    </div>

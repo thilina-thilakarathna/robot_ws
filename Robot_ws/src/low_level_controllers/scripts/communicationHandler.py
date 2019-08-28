@@ -44,7 +44,23 @@ class communication_handler:
     ## This method publish to the robot using the publisher.
     #  @param self The object pointer.
     def command_robot(self,msg):
-        self.robot_publisher.publish(msg)
+        print msg.angle
+        print msg.speed
+        vel = 0.0
+        ang = 0.0
+        if(msg.cmd=="farward"):
+            vel= msg.speed
+        elif (msg.cmd=="backward"):
+            vel= -msg.speed
+        else:
+            vel = 0
+        if(msg.angle>180):
+            ang = 180
+        elif(msg.angle<0):
+            ang = 0
+        else:
+            ang = msg.angle
+        self.robot_publisher.publish(0,0,0,0,0,0,ang,vel,0,vel,0,vel)
         print "called"
 
     def set_robot_command_publisher(self,pub):
@@ -53,7 +69,7 @@ class communication_handler:
 if __name__ == "__main__":
     rospy.init_node('communicationHandler')
     comm_handler = communication_handler()
-    pub = comm_handler.add_publisher('chatter1',Motor)
+    pub = comm_handler.add_publisher('comm/robot',CmdBundle)
     comm_handler.set_robot_command_publisher(pub)
     comm_handler.add_subscriber('UI/comm',Motor,comm_handler.handle_ui_commands)
     comm_handler.add_subscriber('robot/comm',Motor,comm_handler.handle_ui_commands)

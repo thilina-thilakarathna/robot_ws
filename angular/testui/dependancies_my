@@ -1,0 +1,7 @@
+npm install bootstrap --save
+npm install jquery --save
+
+"scripts": [
+    "node_modules/jquery/dist/jquery.js",
+    "node_modules/bootstrap/dist/js/bootstrap.js"
+]
