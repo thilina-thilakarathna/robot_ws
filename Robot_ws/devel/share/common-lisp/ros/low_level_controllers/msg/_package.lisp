@@ -5,5 +5,9 @@
    "CMDBUNDLE"
    "<MOTOR>"
    "MOTOR"
+   "<TIP>"
+   "TIP"
+   "<XYZ>"
+   "XYZ"
   ))
 

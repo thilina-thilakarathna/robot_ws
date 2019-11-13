@@ -7,14 +7,14 @@ Servo myservo;  // create servo object to control a servo
 /*!
  * Servo limits.
  */
-const int upperLimit = 250;
-const int lowerLimit = 70;
+const int upperLimit = 30;
+const int lowerLimit = 200;
 const int servoPin = 6;
 
 /*!
  * I2C address.
  */
-const int i2cAdd = 10;
+const int i2cAdd = 11;
 String data = "";
  
 /*!
@@ -27,6 +27,13 @@ int pos = 0;
 int val2;
 int angIn  = 135;
 
+
+/*!
+ * Encoder related variables.
+ */
+const int EncorderLow = 776;
+const int EncorderHigh = 1990;
+const int PWM_PIN =11;
 /*!
  * Indicator LEDs
  */
@@ -37,7 +44,7 @@ int current_led = 13;
 void setup()
 {
   Wire.begin(i2cAdd);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Wire.onReceive(receiveEvent);
   myservo.attach(servoPin);  
   pinMode(I2c_pin,OUTPUT);
@@ -50,6 +57,7 @@ void setup()
  digitalWrite(I2c_pin,HIGH);
  digitalWrite(servo_edge,HIGH);
  digitalWrite(current_led,HIGH);
+ //Serial.println(getEncoderVal());
  myservo.write(90); 
  delay(3000);
  digitalWrite(I2c_pin,LOW);
@@ -61,6 +69,7 @@ void setup()
 void loop()
 {
  newAngle = validateAngle(angIn);
+ 
  if(newAngle < currentAngle){
   digitalWrite(I2c_pin,LOW);
         for (pos = currentAngle; pos >= newAngle; pos -= 1){
@@ -142,4 +151,12 @@ void receiveEvent(int howMany)
   angIn = data.toInt();
   digitalWrite(I2c_pin,HIGH);
   
+}
+
+int getEncoderVal(){
+    return pulseIn(PWM_PIN, HIGH);
+      
+}
+int getEncoderAng(){
+    return map(getEncoderVal(),EncorderLow,EncorderHigh,0,270);
 }

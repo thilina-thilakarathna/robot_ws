@@ -26,10 +26,10 @@ except AttributeError:
 
 class commandController:
     def __init__(self):
-        self.pub = rospy.Publisher('/comm/robot_test', CmdBundle, queue_size=10)
+        self.pub = rospy.Publisher('/comm/robot', CmdBundle, queue_size=10)
     def sendMsg(self,servo1_ang,servo2_ang,servo3_ang,servo4_ang,servo5_ang,servo6_ang,wheel1_ang,wheel2_ang,wheel3_ang):
         x = {"servo1_ang": servo1_ang,"servo2_ang": servo2_ang,"servo3_ang":servo3_ang,"servo4_ang": servo4_ang,"servo5_ang": servo5_ang,"servo6_ang":servo6_ang,"wheel1_ang": wheel1_ang,"wheel2_ang": wheel2_ang,"wheel3_ang":wheel3_ang}
-        print(json.dumps(x))
+        # print(json.dumps(x))
         self.pub.publish(servo1_ang,servo2_ang,servo3_ang,servo4_ang,servo5_ang,servo6_ang,wheel1_ang,0,wheel2_ang,0,wheel3_ang,0)
         
 
@@ -38,34 +38,36 @@ class Ui_Form(object):
         self.msgSender = commandController()
         self.current_state = "stop"
     def rightCoxa(self):
-        print("rightCoxa")
+        # print("rightCoxa")
         self.sendSliderVals()
     def rightFemur(self):
-        print("rightFemur")
+        # print("rightFemur")
         self.sendSliderVals()
     def rightTibia(self):
-        print("rightTibia")
+        # print("rightTibia")
         self.sendSliderVals()
     def leftCoxa(self):
-        print("leftCoxa")
+        # print("leftCoxa")
         self.sendSliderVals()
     def leftFemur(self):
-        print("leftFemur")
+        # print("leftFemur")
         self.sendSliderVals()
     def LeftTibia(self):
-        print("LeftTibia")
+        # print("LeftTibia")
         self.sendSliderVals()
     def frontRight(self):
-        print("frontRight")
+        # print("frontRight")
         self.sendSliderVals()
     def frontLeft(self):
-        print("frontLeft")
+        # print("frontLeft")
         self.sendSliderVals()
     def backWheel(self):
-        print("backwheel")
+        # print("backwheel")
         self.sendSliderVals()
+    def deg2RadMap(self,val):
+        return (val*0.017453)-2.356
     def sendSliderVals(self):
-        self.msgSender.sendMsg(self.horizontalSlider.value(),self.horizontalSlider_2.value(),self.horizontalSlider_3.value(),self.horizontalSlider_4.value(),self.horizontalSlider_5.value(),self.horizontalSlider_6.value(),self.horizontalSlider_7.value(),self.horizontalSlider_8.value(),self.horizontalSlider_9.value())
+        self.msgSender.sendMsg(self.deg2RadMap(self.horizontalSlider.value()),self.deg2RadMap(self.horizontalSlider_2.value()),self.deg2RadMap(self.horizontalSlider_3.value()),self.deg2RadMap(self.horizontalSlider_4.value()),self.deg2RadMap(self.horizontalSlider_5.value()),self.deg2RadMap(self.horizontalSlider_6.value()),self.deg2RadMap(self.horizontalSlider_7.value()),self.deg2RadMap(self.horizontalSlider_8.value()),self.deg2RadMap(self.horizontalSlider_9.value()))
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(652, 383)

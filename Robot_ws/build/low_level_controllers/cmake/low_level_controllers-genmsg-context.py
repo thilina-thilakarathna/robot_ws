@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg;/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+messages_str = "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg;/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/tip.msg;/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg;/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/xyz.msg"
 services_str = "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/AddTwoInts.srv;/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/srv/UIcommand.srv"
 pkg_name = "low_level_controllers"
 dependencies_str = "std_msgs"

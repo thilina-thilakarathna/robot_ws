@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/low_level_controllers_generate_messages_eus"
+  "/home/thilina/development/robot_ws/Robot_ws/devel/share/roseus/ros/low_level_controllers/msg/xyz.l"
   "/home/thilina/development/robot_ws/Robot_ws/devel/share/roseus/ros/low_level_controllers/msg/CmdBundle.l"
+  "/home/thilina/development/robot_ws/Robot_ws/devel/share/roseus/ros/low_level_controllers/msg/tip.l"
   "/home/thilina/development/robot_ws/Robot_ws/devel/share/roseus/ros/low_level_controllers/msg/Motor.l"
   "/home/thilina/development/robot_ws/Robot_ws/devel/share/roseus/ros/low_level_controllers/srv/AddTwoInts.l"
   "/home/thilina/development/robot_ws/Robot_ws/devel/share/roseus/ros/low_level_controllers/srv/UIcommand.l"

@@ -35,7 +35,9 @@ endif()
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/low_level_controllers/msg" TYPE FILE FILES
     "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/Motor.msg"
+    "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/tip.msg"
     "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/CmdBundle.msg"
+    "/home/thilina/development/robot_ws/Robot_ws/src/low_level_controllers/msg/xyz.msg"
     )
 endif()
 

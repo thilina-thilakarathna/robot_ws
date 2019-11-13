@@ -1,10 +1,11 @@
 #include <Wire.h>
-
+#define SERIAL_BUFFER_SIZE 0
 String command = "";
 char charBuf[50];
-
+ int addr;
+  String commData;
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Wire.begin();
   
 }
@@ -17,13 +18,9 @@ void I2C_Parse(int Addr, String CommData){
 }
 
 void parseCommand(String comm){
-  int addr;
-  String commData;
+ 
   addr = comm.substring(0,comm.indexOf("&")).toInt();
   commData = comm.substring(comm.indexOf("&")+1);
-
-  Serial.println(addr);
-  Serial.println(commData);
 
   I2C_Parse(addr , commData);
 }
@@ -34,16 +31,10 @@ void loop() {
     if(String(c) == "\n"){
       parseCommand(command);
       command = "";
+    
     }
     else{
       command += c;
     }
   }    
 }
-
-//void loop() {
-//  if(Serial.available()){
-//    command = Serial.readString();
-//    parseCommand(command);
-//    }
-//}

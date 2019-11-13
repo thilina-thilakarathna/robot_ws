@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 import rospy
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtGui, QtWidgets
 from low_level_controllers.msg import *
 import json
 try:

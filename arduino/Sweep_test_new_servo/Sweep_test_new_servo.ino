@@ -1,11 +1,3 @@
-/* Sweep
- by BARRAGAN <http://barraganstudio.com>
- This example code is in the public domain.
-
- modified 8 Nov 2013
- by Scott Fitzgerald
- http://www.arduino.cc/en/Tutorial/Sweep
-*/
 
 #include <Servo.h>
 
@@ -20,7 +12,7 @@ int adcValue= 0;
 int offsetVoltage = 2500;
 double adcVoltage = 0;
 double currentValue = 0;
-byte PWM_PIN = 11;
+byte PWM_PIN = 5;
 
 int pwm_value;
  int val;
@@ -57,7 +49,11 @@ digitalWrite(I2c_pin,HIGH);
 }
 
 void loop() {
-  myservo.write(90);
+ // myservo.write(90);
+ pwm_value = pulseIn(PWM_PIN, HIGH);
+   Serial.print("angle :");
+  Serial.println(pwm_value);
+  delay(300);
 //   pwm_value = pulseIn(PWM_PIN, HIGH);
 //  val = map((1884-pwm_value),0,1440,0,270);
 //   Serial.print("angle :");

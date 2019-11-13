@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>656</width>
+    <height>367</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>30</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Left Arm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>30</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Right Arm</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="x_l">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>110</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksBelow</enum>
+   </property>
+   <property name="tickInterval">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QSlider" name="y_l">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>170</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="z_l">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>230</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="x_r">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>100</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="y_r">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>170</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="z_r">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>230</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="r1">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>270</y>
+     <width>99</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mirror</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>x_l</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>left_x()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>137</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y_l</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>left_y()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>z_l</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>left_z()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x_r</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>right_x()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>582</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y_r</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>right_y()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>486</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>586</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>z_r</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>right_z()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>475</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>r1</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>Form</receiver>
+   <slot>mirror_val()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>378</x>
+     <y>286</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>left_x()</slot>
+  <slot>left_y()</slot>
+  <slot>left_z()</slot>
+  <slot>right_x()</slot>
+  <slot>right_y()</slot>
+  <slot>right_z()</slot>
+  <slot>mirror_val()</slot>
+ </slots>
+</ui>

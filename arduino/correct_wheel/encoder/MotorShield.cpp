@@ -4,9 +4,9 @@ MotorShield::MotorShield()
 {
   //Pin map
   _INA1 = 4;
-  _INB1 = 5;
+  _INB1 = 7;
   _PWM1 = 6;
-  _EN1DIAG1 = 8;
+  _EN1DIAG1 = 5;
   _CS1 = A0;
  
 }

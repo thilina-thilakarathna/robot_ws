@@ -26,7 +26,7 @@ double pv_speed = 0;
 int timer1_counter; //for timer
 bool motor_start;
 double e_speed = 0.0;
-double set_speed = 50;
+double set_speed = 30;
 float pwm_pulse = 0.0;
 double e_speed_pre = 0.0;
 double e_speed_sum = 0.0;
@@ -52,6 +52,9 @@ bool set_dir = 1;
  */
 MotorShield md;
 
+int i2cLed = 10;
+int currentLed = 11;
+int EncoderLed = 12;
 
 /*!
  * \brief Test the Motor controller
@@ -68,14 +71,24 @@ void stopIfFault()
   if (md.getMotorFault())
   {
     Serial.println("MOtor Controller failure");
-    while(1);
+    while(1){
+      digitalWrite(i2cLed,HIGH);
+  digitalWrite(currentLed,LOW);
+   digitalWrite(EncoderLed,LOW);
+delay(100);
+digitalWrite(i2cLed,LOW);
+  digitalWrite(currentLed,HIGH);
+   digitalWrite(EncoderLed,LOW);
+delay(100);
+  
+    }
   }
 
 }
 
 
 void setup() {
-  Wire.begin(9); 
+  Wire.begin(43); 
   // Attach a function to trigger when something is received.
   Wire.onReceive(receiveEvent);
   pinMode(pin_a,INPUT_PULLUP);
@@ -84,8 +97,19 @@ void setup() {
   md.init();
   pinMode(7,OUTPUT);
   attachInterrupt(digitalPinToInterrupt(pin_a), detect_a, RISING);
-  Serial.begin(9600);
+  Serial.begin(115200);
 
+  pinMode(i2cLed,OUTPUT);
+  pinMode(currentLed,OUTPUT);
+  pinMode(EncoderLed,OUTPUT);
+
+ digitalWrite(i2cLed,HIGH);
+  digitalWrite(currentLed,HIGH);
+   digitalWrite(EncoderLed,HIGH);
+delay(3000);
+digitalWrite(i2cLed,LOW);
+  digitalWrite(currentLed,LOW);
+   digitalWrite(EncoderLed,LOW);
   cli();//stop interrupts
   //set timer1 interrupt at 1Hz
   TCCR1A = 0;// set entire TCCR1A register to 0
@@ -93,7 +117,7 @@ void setup() {
   TCNT1  = 0;//initialize counter value to 0
   OCR1A = 156.25;// for 100Hz
   // turn on CTC mode
-  TCCR1B |= (1 << WGM12);
+  TCCR1B |= (1 << WGM12); // OC1A compare match
   // Set CS12 and CS10 bits for 1024 prescaler
   TCCR1B |= (1 << CS12) | (1 << CS10);  
   // enable timer compare interrupt
@@ -115,12 +139,14 @@ void setup() {
  */
 void receiveEvent(int howMany)
 {
+  digitalWrite(i2cLed,HIGH);
   input_i2c = "";
   while( Wire.available()){
     input_i2c += (char)Wire.read();    
   }
   input_speed = input_i2c.toInt();
   Serial.println(input_speed);
+  
     if(input_speed > 0){
     set_speed = input_speed;
     set_dir = 1;
@@ -147,6 +173,7 @@ void loop() {
     Serial.print("Current : "); 
     Serial.println(md.getMCurrentMilliamps()); 
     delay(200);
+    digitalWrite(i2cLed,LOW);
   }
  }
 
@@ -178,15 +205,15 @@ void detect_a() {
  */
  ISR(TIMER1_COMPA_vect){
    TCNT1 = timer1_counter;   // set timer
-   // rps = (encoder/1848.0)*100;  //calculate motor speed, unit is rps (for 60 RPM motors)
-   rps = (encoder/330.0)*100;  //calculate motor speed, unit is rps (for 320 RPM motors)
+    rps = (encoder/1848.0)*100;  //calculate motor speed, unit is rps (for 60 RPM motors)
+  // rps = (encoder/330.0)*100;  //calculate motor speed, unit is rps (for 320 RPM motors)
    pv_speed = rps*20.41;  // calculate speed in cm s-1 for the small wheel
    //pv_speed = rps*26.69;  // calculate speed in cm s-1 for the big wheel
    if(pv_speed){
-    digitalWrite(7,LOW);
+    digitalWrite(EncoderLed,LOW);
    }
    else{
-    digitalWrite(7,HIGH);
+    digitalWrite(EncoderLed,HIGH);
    }
    encoder = 0;
    
